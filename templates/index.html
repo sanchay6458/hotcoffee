@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    {% block content %}
+    <div class="container">
+        <!-- header section start-->
+        <header>
+            <div class="logo">
+                <p>{{headfooter.logo}}</p>
+            </div>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="menu">
+                <p>Home</p>
+                <p>Article</p>
+                <a href="{{headfooter.inst_link}}"> <i class="fa-brands fa-instagram-square"></i></a>
+                <a href="{{headfooter.twitter_link}}"><i class="fa-brands fa-twitter"></i></a>
+                <a href="{{headfooter.ind_link}}"><i class="fa-brands fa-linkedin"></i></a>
+
+            </div>
+        </header>
+        <!-- header section end-->
+
+        <!-- body section start-->
+        <main>
+
+            <div class="section1">
+                {% for sec1 in sec1 %}
+                <div class="con">
+                    {% comment %} <a href=""> {% endcomment %}
+                    <div class="make_coffee">
+                        
+                        <h6>{{sec1.title}}
+                        <img src="{% static 'image/cofee.jpg' %}" alt=""></h6>
+                        <p>why learn how to blog?</p>
+                    </div>
+                    <div class="img">
+                        <img src="{% static 'image/se1.jpg'  %}" alt="">
+                    </div>
+                    {% comment %} </a> {% endcomment %}
+                </div>
+                {%endfor%}
+            </div>
+            <div class="section2">
+                <div class="con">
+                    <div class="establish">
+                        <h6>Long establish</h6>
+                        <p class="p1">It is a long established fact that a reader will be distracted by the readable
+                            content of a page when looking at its layout. The point of using Lorem Ipsum is that....</p>
+                        <div class="flex">
+                            <p class="p2">May 20th 2022</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="{% static 'image/se2.jpg' %}" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="section3">
+                <div class="con flex">
+                    <div class="box">
+                        <img src="{% static 'image/card1.jpg' %}" alt="">
+                        <div class="paragrapg">
+                            <h6>Long establish</h6>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas laudantium harum odio
+                                dolore distinctio incidunt, quas eligendi, ad voluptate necessitatibus facere vitae
+                                excepturi tempora pariatur accusantium veritatis cumque provident veniam!</p>
+                            <div class="flex">
+                                <p class="p2">May 20th 2022</p>
+                                <a href="">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="{% static 'image/card1.jpg' %}" alt="">
+                        <div class="paragrapg">
+                            <h6>Long establish</h6>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id rem assumenda quod. Suscipit
+                                modi exercitationem autem pariatur, corrupti sit ipsam.</p>
+                            <div class="flex">
+                                <p class="p2">May 20th 2022</p>
+                                <a href="">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="{% static 'image/card1.jpg' %}" alt="">
+                        <div class="paragrapg">
+                            <h6>Long establish</h6>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, odio!</p>
+                            <div class="flex">
+                                <p class="p2">May 20th 2022</p>
+                                <a href="">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section4">
+                <div class="con">
+                    <div class="flex">
+                        <div class="left">
+                            <h2>What is lorem ipsum?</h2>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+                                facilis fugit dicta itaque totam quis. Accusantium,
+                                ad? Dignissimos debitis perspiciatis tempora asperiores tenetur officiis exercitationem
+                                facilis omnis, ipsum dolore dolor.</p>
+                            <div class="flex">
+                                <p class="p2">May 20th 2022</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <img src="{% static 'image/card1.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <div class="con"> -->
+            <div class="seemore">
+                    <a href="">See More<i class="fa-solid fa-arrow-down"></i></a>
+                <!-- </div> -->
+            </div>
+            
+
+        </main>
+
+        <!-- body section end-->
+
+        <!-- footer section start-->
+        <footer>
+            <div class="footer">
+                <p>{{headfooter.com_footer}}</p>
+            </div>
+            <div class="foltleft">
+                <a href="{{headfooter.inst_link}}"> <i class="fa-brands fa-instagram-square"></i></a>
+                <a href="{{headfooter.twitter_link}}"><i class="fa-brands fa-twitter"></i></a>
+                <a href="{{headfooter.ind_link}}"><i class="fa-brands fa-linkedin"></i></a>
+
+            </div>
+        </footer>
+        <!-- footer section end-->
+    </div>
+    {% endblock content %}
+</body>
+
+</html>
